@@ -1,0 +1,71 @@
+<!--
+  Generated template for the UpdateProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Ürün Güncelleme</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="formgroup" #myForm='ngForm' (ngSubmit)="onSubmit(myForm)">
+    <div class="gallery-button" text-center>
+      <ion-icon name="images" on-tap="openGallery()"></ion-icon>
+      <p>Resmi Değiştir</p>
+      <div class="resim_satir">
+        <img [src]="imageSrc" />
+      </div>
+    </div>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>
+          Ürün Adı
+        </ion-label>
+        <ion-input type="text" formControlName="product_name" value="{{ product?.product_name }}"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="product_name.hasError('required') && product_name.touched">
+        <p> *Ürün adı zorunlu!</p>
+      </ion-item>
+      <ion-item>
+        <ion-label>Kategori</ion-label>
+        <ion-select formControlName="product_category">
+          <ion-option value="1" [selected]="category == 1">Yiyecek</ion-option>
+          <ion-option value="2" [selected]="category == 2">İçecek</ion-option>
+          <ion-option value="3" [selected]="category == 3">Atıştırmalık</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>
+          Ürün Fiyatı
+        </ion-label>
+        <ion-input type="number" formControlName="product_price" value="{{ product?.product_price }}"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="product_price.hasError('required') && product_price.touched">
+        <p> *Ürün fiyatı zorunlu!</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>
+          Ürün Kalori
+        </ion-label>
+        <ion-input type="number" formControlName="product_calory" value="{{ product?.product_calory }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>
+          Açıklama
+        </ion-label>
+        <ion-textarea formControlName="product_explanation" aria-rowcount="3">{{ product?.product_explanation }}</ion-textarea>
+      </ion-item>
+    </ion-list>
+    <div class="centering">
+      <button type="submit" ion-button color="secondary" [disabled]="!formgroup.valid">Güncelle</button>
+    </div>
+  </form>
+
+</ion-content>

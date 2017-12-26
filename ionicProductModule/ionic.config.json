@@ -1,0 +1,14 @@
+{
+  "name": "githubIonic",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/get_products.php",
+      "proxyUrl": "http://test.setrowid.com/alperen_test"
+    }
+  ]
+}

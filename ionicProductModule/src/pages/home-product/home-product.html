@@ -1,0 +1,40 @@
+<!--
+  Generated template for the HomeProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Anasayfa</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div class="centering">
+      <button ion-button color="primary" *ngIf="userAuthority == 1" (click)="goToAddProduct()">Ürün Ekle</button>
+    </div>
+    <ion-list class="list-line" inset>
+      <ion-item>
+        <ion-label>Fakülte</ion-label>
+        <ion-select [(ngModel)]="faculty">
+          <ion-option value="1">Teknoloji Fakültesi</ion-option>
+          <ion-option value="2">Mühendislik Fakültesi</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list inset>
+      <button ion-item (click)="goToCategoryDetails(1)">Yiyecek <ion-badge item-end>7</ion-badge></button>
+      <button ion-item (click)="goToCategoryDetails(2)">İçecek <ion-badge item-end>10</ion-badge></button>
+      <button ion-item (click)="goToCategoryDetails(3)">Atıştırmalık <ion-badge item-end>23</ion-badge></button>
+      <!--<button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+        {{ item }}
+      </button>-->
+    </ion-list>
+
+</ion-content>

@@ -1,0 +1,15 @@
+page-product-details {
+    .explanation{
+        color: #000000;
+        text-align: justify;
+    }
+    .card-bottom{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 15px;
+    }
+    .price{
+        margin-top:15px;
+    }
+}
